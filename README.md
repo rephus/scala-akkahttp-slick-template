@@ -116,6 +116,6 @@ You could also use `./sbt run` but you need to change the application.conf to us
 PK id UUID is generated automatically
 ```
 curl -X POST http://localhost:8080/task -H "Content-Type: application/json" -d'{
-  "completed":false,"created":"2019-07-14T03:57:58Z","description":"New task description","due":"2019-11-14T14:52:47Z","id":"4f3c195e-b6c5-4ae7-99f9-d1e6b5460cb5","title":"New task"
+  "completed":false,"created":"2019-07-14T03:57:58Z","description":"New task description","due":"2019-11-14T14:52:47Z","title":"New task"
 }'
 ```
