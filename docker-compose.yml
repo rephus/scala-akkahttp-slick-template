@@ -1,0 +1,22 @@
+todo:
+  build: .
+  ports:
+    - "8080:8080"
+  volumes:
+      - .:/code
+      - ~/.ivy2:/root/.ivy2 #Keep downloaded dependencies locally
+      - ~/.sbt:/root/.sbt
+  links:
+    - postgres
+
+postgres:
+  image: postgres
+  volumes:
+    - /var/lib/postgresql/data
+    - ./init.sql:/docker-entrypoint-initdb.d/1-init.sql
+  expose:
+    - "5432"
+  ports:
+    - "5432:5432"
+  environment:
+      - POSTGRES_PASSWORD=postgres
